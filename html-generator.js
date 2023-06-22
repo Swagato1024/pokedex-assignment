@@ -26,16 +26,16 @@ const generateCard = (line) => {
     Weight: stats[7],
   };
 
-  const attributes = ["Types", "Weight", "HP", "XP", "Attack", "Defense"];
+  const label = ["Types", "Weight", "HP", "XP", "Attack", "Defense"];
   const openingTr = "<tr>";
-  const openingTdAttribute = '<td class="attributes">';
-  const openingTdValues = '<td class="values">';
+  const openingTdAttribute = '<td class="label">';
+  const openingTdvalue = '<td class="value">';
 
-  const rows = attributes
+  const rows = label
     .map((attribute) => {
       let cardRow = openingTr;
       cardRow += openingTdAttribute + attribute + closingTd;
-      cardRow += openingTdValues + pokemon[attribute] + closingTd;
+      cardRow += openingTdvalue + pokemon[attribute] + closingTd;
       cardRow += closingTr;
       return cardRow;
     })
@@ -87,4 +87,3 @@ const main = () => {
   console.log(parsedData);
 };
 main();
-
